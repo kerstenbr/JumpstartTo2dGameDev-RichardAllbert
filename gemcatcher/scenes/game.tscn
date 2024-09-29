@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://c4useoh8q1253"]
+
+[ext_resource type="Script" path="res://scenes/game.gd" id="1_8gy7c"]
+[ext_resource type="Texture2D" uid="uid://blijl2i45nukc" path="res://assets/GameBg.png" id="1_rhc0d"]
+[ext_resource type="PackedScene" uid="uid://blrt5gj50rm0p" path="res://scenes/gem.tscn" id="2_8sgmj"]
+[ext_resource type="PackedScene" uid="uid://bvngoeemwr6pu" path="res://scenes/paddle.tscn" id="2_o3mo7"]
+[ext_resource type="AudioStream" uid="uid://2nosyp4jvml3" path="res://assets/bgm_action_5.mp3" id="5_bwjdv"]
+[ext_resource type="AudioStream" uid="uid://cdanc6gspjl0h" path="res://assets/spell1_0.wav" id="6_s3yus"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_8gy7c")
+gem_scene = ExtResource("2_8sgmj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_rhc0d")
+
+[node name="Paddle" parent="." instance=ExtResource("2_o3mo7")]
+position = Vector2(556, 595)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[node name="Label" type="Label" parent="."]
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 134.0
+offset_bottom = 91.0
+theme_override_colors/font_color = Color(0.888011, 0.00014497, 0.742022, 1)
+theme_override_colors/font_shadow_color = Color(1, 0.763643, 0.700383, 1)
+theme_override_colors/font_outline_color = Color(0, 0.299619, 0.72539, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 48
+text = "00000"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_bwjdv")
+volume_db = -27.772
+autoplay = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_s3yus")
+volume_db = -11.012
+
+[connection signal="area_entered" from="Paddle" to="." method="_on_paddle_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
