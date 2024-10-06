@@ -34,14 +34,26 @@ enum PlayerState { ALIVE, DEAD }
 	
 
 # Called when the node enters the scene tree for the first time.
+#func _ready():
+	#print_name()
+	#var result: int = add_nums(5,40)
+	#print("Result: ", result)
+	#
+#func print_name() -> void:
+	#print("kerstenbr")
+	#
+#func add_nums(num1: int, num2: int) -> int:
+	#return num1 + num2
+	
+
+#Called when the node enters the scene tree for the first time.
 func _ready():
-	print_name()
-	var result: int = add_nums(5,40)
-	print("Result: ", result)
+	var num1: int = 3
+	var num2: int = 11
 	
-func print_name() -> void:
-	print("kerstenbr")
+	print(num1 + num2)
+	print(num1 - num2)
+	print(num1 * num2)
+	print(num1 / num2)
 	
-func add_nums(num1: int, num2: int) -> int:
-	return num1 + num2
-	
+	print(num2 % num1)
