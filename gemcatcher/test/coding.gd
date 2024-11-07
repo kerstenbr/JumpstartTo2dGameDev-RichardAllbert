@@ -47,13 +47,33 @@ enum PlayerState { ALIVE, DEAD }
 	
 
 #Called when the node enters the scene tree for the first time.
+#func _ready():
+	#var num1: int = 3
+	#var num2: int = 11
+
+#Called when the node enters the scene tree for the first time.
+#func _ready():
+	#var num1: int = 4
+	#var num2: int = 11
+	#
+	#if num1 == 3:
+		#print("num1 is 3")
+	#else:
+		#print("ops")
+
+#Called when the node enters the scene tree for the first time.
 func _ready():
-	var num1: int = 3
-	var num2: int = 11
+	var fruits: Array = ["apple", "pear", "banana"]
 	
-	print(num1 + num2)
-	print(num1 - num2)
-	print(num1 * num2)
-	print(num1 / num2)
+	print(fruits[1])
+	print(fruits.size)
 	
-	print(num2 % num1)
+	print(fruits)
+	fruits.shuffle()
+	print(fruits)
+	print(type_string(typeof(fruits)))
+	
+	fruits.push_back("kiwi")
+	fruits.push_front("orange")
+	
+	print(fruits)
