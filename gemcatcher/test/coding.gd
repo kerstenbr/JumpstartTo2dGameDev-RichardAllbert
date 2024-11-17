@@ -62,18 +62,28 @@ enum PlayerState { ALIVE, DEAD }
 		#print("ops")
 
 #Called when the node enters the scene tree for the first time.
+#func _ready():
+	#var fruits: Array = ["apple", "pear", "banana"]
+	#
+	#print(fruits[1])
+	#print(fruits.size)
+	#
+	#print(fruits)
+	#fruits.shuffle()
+	#print(fruits)
+	#print(type_string(typeof(fruits)))
+	#
+	#fruits.push_back("kiwi")
+	#fruits.push_front("orange")
+	#
+	#print(fruits)
+
+#Called when the node enters the scene tree for the first time.
 func _ready():
-	var fruits: Array = ["apple", "pear", "banana"]
-	
-	print(fruits[1])
-	print(fruits.size)
-	
-	print(fruits)
-	fruits.shuffle()
-	print(fruits)
-	print(type_string(typeof(fruits)))
-	
-	fruits.push_back("kiwi")
-	fruits.push_front("orange")
-	
-	print(fruits)
+	var my_dict = {
+		"name": "Fred",
+		"age": 42
+	}
+	print(my_dict)
+	print(my_dict["name"])
+	print(my_dict["age"])
