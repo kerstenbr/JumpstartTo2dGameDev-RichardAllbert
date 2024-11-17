@@ -79,11 +79,41 @@ enum PlayerState { ALIVE, DEAD }
 	#print(fruits)
 
 #Called when the node enters the scene tree for the first time.
+# func _ready():
+# 	var my_dict = {
+# 		"name": "Fred",
+# 		"age": 42
+# 	}
+# 	print(my_dict)
+# 	print(my_dict["name"])
+# 	print(my_dict["age"])
+
+#Called when the node enters the scene tree for the first time.
 func _ready():
-	var my_dict = {
-		"name": "Fred",
-		"age": 42
+	#var my_times: Array = [41, 43, 34, 56, 43]
+	#
+	#for mt in my_times:
+		#print(mt)
+	#
+	#for n in range(10):
+		#print(n)
+	#
+	#print("DONE")
+	
+	#const STOPPER: int = 10
+	#var num: int = 0
+	#
+	#while num < STOPPER:
+		#print(num)
+		#num +=1
+	#print("DONE")
+
+	var personagem = {
+		"name": "Kerstenbr",
+		"class": "Necromancer",
+		"level": 100
 	}
-	print(my_dict)
-	print(my_dict["name"])
-	print(my_dict["age"])
+	print(personagem.keys())
+	
+	#for chave in personagem.keys():
+		#print(chave, " -> ", personagem[chave])
