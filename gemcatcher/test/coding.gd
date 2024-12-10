@@ -118,10 +118,27 @@ enum PlayerState { ALIVE, DEAD }
 		#print(key, " -> ", personagem[key])
 
 #Called when the node enters the scene tree for the first time.
+#func _ready():
+	#var lives: int = 10
+	#var level_name: String = "Rocky"
+	#var speed: float = 312.5845
+	#
+	#var s: String = "l %d n %s %f" % [lives, level_name, speed]
+	#print(s)
+
+#Called when the node enters the scene tree for the first time.
 func _ready():
-	var lives: int = 10
-	var level_name: String = "Rocky"
-	var speed: float = 312.5845
+	var np: Player = Player.new("Guilherme", 100)
+	np.say_status()
+	print(Player.player_count)
 	
-	var s: String = "l %d n %s %f" % [lives, level_name, speed]
-	print(s)
+	var np2: Player = Player.new("Leonardo", 100)
+	np2.say_status()
+	print(Player.player_count)
+	
+	
+	np.hit()
+	np.say_status()
+	np2.say_status()
+	Player.say_how_many()
+	
