@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://cexfv7qirgxvt"]
+
+[ext_resource type="Script" path="res://scenes/simple_transition/simple_transition.gd" id="1_5er01"]
+[ext_resource type="Texture2D" uid="uid://b2x42aepdrg46" path="res://assets/background/sky.png" id="1_qn2c3"]
+[ext_resource type="LabelSettings" uid="uid://cygicpfkrmo0j" path="res://assets/LG_red_24.tres" id="3_1gwf7"]
+
+[node name="SimpleTransition" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5er01")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_qn2c3")
+expand_mode = 4
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.5
+offset_top = -12.5
+offset_right = 80.5
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Carregando..."
+label_settings = ExtResource("3_1gwf7")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

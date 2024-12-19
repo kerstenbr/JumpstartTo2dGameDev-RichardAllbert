@@ -1,0 +1,7 @@
+res://scenes/game/game.tscn
+res://assets/LG_red_64.tres
+res://assets/LG_white_42.tres
+res://assets/LG_red_72.tres
+res://assets/LG_red_24.tres
+res://scenes/parallax_image/parallax_image.gd
+res://scenes/parallax_image/parallax_image.tscn
