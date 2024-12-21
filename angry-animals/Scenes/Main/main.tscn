@@ -1,0 +1,78 @@
+[gd_scene load_steps=6 format=3 uid="uid://d0e17krcdhsud"]
+
+[ext_resource type="Texture2D" uid="uid://br30ahdql0nrf" path="res://assets/env/MainBG.png" id="1_fuw1f"]
+[ext_resource type="PackedScene" uid="uid://biavcgn2t21kf" path="res://Scenes/LevelButton/level_button.tscn" id="2_4gfmh"]
+[ext_resource type="FontFile" uid="uid://cyq8rf3apmwyv" path="res://assets/fonts/LuckiestGuy-Regular.ttf" id="3_dmsir"]
+[ext_resource type="AudioStream" uid="uid://b140qa8afpxb4" path="res://assets/audio/birdsong.wav" id="4_4aj24"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_h67va"]
+font = ExtResource("3_dmsir")
+font_size = 96
+font_color = Color(0.309804, 0.592157, 0.913725, 1)
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 0.384314)
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_fuw1f")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="LevelButton" parent="TextureRect/HBoxContainer" instance=ExtResource("2_4gfmh")]
+layout_mode = 2
+
+[node name="LevelButton2" parent="TextureRect/HBoxContainer" instance=ExtResource("2_4gfmh")]
+layout_mode = 2
+level_number = 2
+
+[node name="LevelButton3" parent="TextureRect/HBoxContainer" instance=ExtResource("2_4gfmh")]
+layout_mode = 2
+level_number = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -353.5
+offset_right = 353.5
+offset_bottom = 97.0
+grow_horizontal = 2
+theme_override_constants/margin_top = 24
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "ANGRY ANIMALS"
+label_settings = SubResource("LabelSettings_h67va")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_4aj24")
+volume_db = -9.369
+autoplay = true

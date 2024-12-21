@@ -1,0 +1,61 @@
+[gd_scene load_steps=4 format=3 uid="uid://b56vubbir6gel"]
+
+[ext_resource type="Script" path="res://Scenes/GameUi/game_ui.gd" id="1_676qa"]
+[ext_resource type="LabelSettings" uid="uid://b1mdve1iiw7td" path="res://lg_48_gr.tres" id="1_e3h6f"]
+[ext_resource type="AudioStream" uid="uid://xlk4cucblnd1" path="res://assets/audio/jazzyfrenchy.mp3" id="3_6744s"]
+
+[node name="GameUi" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_676qa")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="VB" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="LevelLabel" type="Label" parent="MarginContainer/VB"]
+layout_mode = 2
+text = "LEVEL: 10"
+label_settings = ExtResource("1_e3h6f")
+
+[node name="AttemptsLabel" type="Label" parent="MarginContainer/VB"]
+layout_mode = 2
+text = "ATTEMPTS: 100"
+label_settings = ExtResource("1_e3h6f")
+
+[node name="VB2" type="VBoxContainer" parent="MarginContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="MarginContainer/VB2"]
+layout_mode = 2
+text = "LEVEL COMPLETE"
+label_settings = ExtResource("1_e3h6f")
+
+[node name="Label2" type="Label" parent="MarginContainer/VB2"]
+layout_mode = 2
+text = "press space"
+label_settings = ExtResource("1_e3h6f")
+horizontal_alignment = 1
+
+[node name="GameSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_6744s")
+volume_db = -18.457
