@@ -1,0 +1,8 @@
+res://scenes/master/master.tscn
+res://assets/LG_84_Green.tres
+res://assets/GM_32_White.tres
+res://assets/GM_32_Dark.tres
+res://singletons/sound_manager.gd
+res://scenes/scorer/scorer.tscn
+res://scenes/scorer/scorer.gd
+res://scenes/memory_tile/memory_tile.tscn

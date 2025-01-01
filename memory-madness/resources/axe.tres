@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Weapon" load_steps=3 format=3 uid="uid://dekoqr3j5jdlp"]
+
+[ext_resource type="Script" path="res://resources/weapon.gd" id="1_wvpa6"]
+[ext_resource type="Texture2D" uid="uid://27ewap41t3ll" path="res://assets/glitch/alienBeige_square.png" id="2_v4ug7"]
+
+[resource]
+script = ExtResource("1_wvpa6")
+damage = 800
+weapon_name = "axe bigudo"
+texture = ExtResource("2_v4ug7")

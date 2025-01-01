@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Weapon" load_steps=3 format=3 uid="uid://qdfiworx6jqq"]
+
+[ext_resource type="Script" path="res://resources/weapon.gd" id="1_0qon4"]
+[ext_resource type="Texture2D" uid="uid://gibnkoff0q7d" path="res://assets/glitch/boxItem.png" id="2_je5eu"]
+
+[resource]
+script = ExtResource("1_0qon4")
+damage = 40
+weapon_name = "explosive kfine"
+texture = ExtResource("2_je5eu")
