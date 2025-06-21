@@ -1,0 +1,6 @@
+res://scenes/game.tscn
+res://test/coding.gd
+res://test/player.gd
+res://scenes/gem.tscn
+res://scenes/paddle.tscn
+res://test/coding.tscn

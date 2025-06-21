@@ -1,0 +1,229 @@
+[gd_scene load_steps=17 format=3 uid="uid://cnqh1gl88lppl"]
+
+[ext_resource type="Texture2D" uid="uid://bh5abnv0t3ir1" path="res://assets/player/player.png" id="1_6fup1"]
+[ext_resource type="Script" path="res://scenes/player/player.gd" id="1_32hjw"]
+[ext_resource type="PackedScene" uid="uid://c5ybtyxd2h27e" path="res://scenes/player_cam/player_cam.tscn" id="3_138k3"]
+[ext_resource type="PackedScene" uid="uid://clvv0bfeois4" path="res://scenes/shooter/shooter.tscn" id="4_np36y"]
+
+[sub_resource type="Animation" id="Animation_k5m6o"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [13]
+}
+
+[sub_resource type="Animation" id="Animation_sm875"]
+resource_name = "fall"
+length = 0.1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [18]
+}
+
+[sub_resource type="Animation" id="Animation_52s6x"]
+resource_name = "hurt"
+length = 0.2
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [11, 12]
+}
+
+[sub_resource type="Animation" id="Animation_ic7d8"]
+resource_name = "idle"
+length = 0.4
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [13, 14, 15, 16]
+}
+
+[sub_resource type="Animation" id="Animation_755la"]
+resource_name = "jump"
+length = 0.1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [17]
+}
+
+[sub_resource type="Animation" id="Animation_l0jmk"]
+resource_name = "run"
+length = 0.4
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_srh4f"]
+_data = {
+"RESET": SubResource("Animation_k5m6o"),
+"fall": SubResource("Animation_sm875"),
+"hurt": SubResource("Animation_52s6x"),
+"idle": SubResource("Animation_ic7d8"),
+"jump": SubResource("Animation_755la"),
+"run": SubResource("Animation_l0jmk")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d81jv"]
+size = Vector2(13, 21)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xn2wh"]
+radius = 6.0
+height = 18.0
+
+[sub_resource type="Animation" id="Animation_fv6y1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_o6oq1"]
+resource_name = "invincible"
+length = 0.4
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iicu3"]
+_data = {
+"RESET": SubResource("Animation_fv6y1"),
+"invincible": SubResource("Animation_o6oq1")
+}
+
+[node name="Player" type="CharacterBody2D" groups=["Moveables", "Player"]]
+collision_layer = 0
+script = ExtResource("1_32hjw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_6fup1")
+hframes = 19
+frame = 13
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_srh4f")
+}
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 5.5)
+shape = SubResource("RectangleShape2D_d81jv")
+
+[node name="PlayerCam" parent="." instance=ExtResource("3_138k3")]
+
+[node name="DebugLabel" type="Label" parent="."]
+offset_left = -13.0
+offset_top = -41.0
+offset_right = 154.0
+offset_bottom = 320.0
+scale = Vector2(0.177656, 0.0990538)
+theme_override_font_sizes/font_size = 64
+text = "Label
+Label
+Label
+Label"
+
+[node name="Shooter" parent="." instance=ExtResource("4_np36y")]
+speed = 150.0
+life_span = 3.0
+shoot_delay = 0.3
+
+[node name="HitBox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 20
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(0, 6)
+shape = SubResource("CapsuleShape2D_xn2wh")
+
+[node name="InvincibleTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="InvinciblePlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_iicu3")
+}
+
+[node name="HurtTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="Sound" type="AudioStreamPlayer2D" parent="."]
+
+[connection signal="area_entered" from="HitBox" to="." method="_on_hit_box_area_entered"]
+[connection signal="timeout" from="InvincibleTimer" to="." method="_on_invincible_timer_timeout"]
+[connection signal="timeout" from="HurtTimer" to="." method="_on_hurt_timer_timeout"]
