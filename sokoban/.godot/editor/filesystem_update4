@@ -1,9 +1,2 @@
-res://scenes/level_button/level_button.tscn
 res://assets/level_tiles.tres
-res://scenes/main/main.tscn
-res://scenes/level/level.tscn
-res://scenes/hud/hud.tscn
-res://scenes/game_over_ui/game_over_ui.tscn
-res://scenes/level_button/level_button_ben.tscn
-res://scenes/level_button/level_button_ben.gd
-res://scenes/main/main.gd
+res://scenes/level_button/level_button_ben.tres
