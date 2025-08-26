@@ -1,5 +1,3 @@
-res://Scenes/UiButton/button.tscn
-res://Scenes/UiButton/UiButton.tscn
-res://Scenes/UiButton/UiButton.gd
-res://Scenes/Main/Main.tscn
-res://Scenes/Main/Main.gd
+res://Resources/lg_white_32.tres
+res://Scenes/PowerUp/PowerUp.tscn
+res://Scenes/PowerUp/PowerUp.gd
