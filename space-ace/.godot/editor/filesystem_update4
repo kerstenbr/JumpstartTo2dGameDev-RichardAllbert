@@ -1,3 +1,9 @@
 res://Resources/lg_white_32.tres
-res://Scenes/PowerUp/PowerUp.tscn
-res://Scenes/PowerUp/PowerUp.gd
+res://Scenes/BulletBase/BulletBase.tscn
+res://Scenes/BulletBase/BulletBase.gd
+res://Scenes/BulletBomb/BulletBomb.tscn
+res://Scenes/BulletPlayer/BulletPlayer.tscn
+res://Scenes/BulletEnemy/BulletEnemy.tscn
+res://Scenes/BulletBomb/BulletBomb.gd
+res://Scenes/BulletEnemy/BulletEnemy.gd
+res://Scenes/BulletPlayer/BulletPlayer.gd

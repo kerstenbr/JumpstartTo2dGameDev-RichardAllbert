@@ -1,5 +1,10 @@
-res://Scenes/PowerUp
+res://assets/lasers
+res://Scenes/BulletEnemy
+res://Scenes/BulletBase
+res://Scenes/BulletPlayer
+res://Scenes/BulletBomb
 res://Scenes/Projectile
+res://Scenes/PowerUp
 res://assets/misc
 res://Scenes/Explosion
 res://Scenes/Level
