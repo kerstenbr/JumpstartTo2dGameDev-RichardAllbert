@@ -1,0 +1,82 @@
+[gd_scene load_steps=7 format=3 uid="uid://d4cajogqovldt"]
+
+[ext_resource type="LabelSettings" uid="uid://o587wb3hvjnh" path="res://assets/lg_d_orange_64.tres" id="1_6q06x"]
+[ext_resource type="Script" uid="uid://bd3jci27jprgs" path="res://scenes/main/Main.gd" id="1_ow5a4"]
+[ext_resource type="Texture2D" uid="uid://d6jg6beab6d3" path="res://assets/images/pill1.png" id="2_ow5a4"]
+[ext_resource type="Texture2D" uid="uid://b715ke1rjnejt" path="res://assets/images/pill2.png" id="3_hujxm"]
+[ext_resource type="Texture2D" uid="uid://leklfxfcc3en" path="res://assets/images/soldier1_gun.png" id="4_yyfjg"]
+[ext_resource type="Texture2D" uid="uid://duajalhcen6g7" path="res://assets/images/survivor1_gun.png" id="5_b1x3f"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ow5a4")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.137808, 0.46779, 0.381626, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -84.0
+offset_top = -11.5
+offset_right = 84.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "PRESS SPACE TO PLAY"
+label_settings = ExtResource("1_6q06x")
+
+[node name="Pill1" type="Sprite2D" parent="."]
+position = Vector2(199, 195)
+texture = ExtResource("2_ow5a4")
+
+[node name="Pill2" type="Sprite2D" parent="."]
+position = Vector2(528, 473)
+texture = ExtResource("3_hujxm")
+
+[node name="Pill3" type="Sprite2D" parent="."]
+position = Vector2(132, 518)
+texture = ExtResource("3_hujxm")
+
+[node name="Pill4" type="Sprite2D" parent="."]
+position = Vector2(499, 120)
+texture = ExtResource("3_hujxm")
+
+[node name="Pill5" type="Sprite2D" parent="."]
+position = Vector2(936, 219)
+texture = ExtResource("2_ow5a4")
+
+[node name="Pill6" type="Sprite2D" parent="."]
+position = Vector2(851, 495)
+texture = ExtResource("2_ow5a4")
+
+[node name="Soldier1Gun" type="Sprite2D" parent="."]
+position = Vector2(97, 120)
+texture = ExtResource("4_yyfjg")
+
+[node name="Soldier1Gun2" type="Sprite2D" parent="."]
+position = Vector2(195, 593)
+texture = ExtResource("4_yyfjg")
+
+[node name="Soldier1Gun3" type="Sprite2D" parent="."]
+position = Vector2(673, 407)
+texture = ExtResource("4_yyfjg")
+
+[node name="Survivor1Gun" type="Sprite2D" parent="."]
+position = Vector2(1066, 314)
+texture = ExtResource("5_b1x3f")
