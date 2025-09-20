@@ -1,8 +1,14 @@
-[gd_scene load_steps=4 format=4 uid="uid://c7u7rhrpiyav7"]
+[gd_scene load_steps=6 format=4 uid="uid://c7u7rhrpiyav7"]
 
 [ext_resource type="PackedScene" uid="uid://l43vt6em1ae0" path="res://scenes/game_ui/game_ui.tscn" id="1_h3e3j"]
 [ext_resource type="Script" uid="uid://cwe2mx88jt6v5" path="res://scenes/level/Level.gd" id="1_vpf64"]
 [ext_resource type="TileSet" uid="uid://b4gysaxo34d2q" path="res://resources/leveltiles.tres" id="3_i166f"]
+[ext_resource type="PackedScene" uid="uid://ccnjrcrv8shyc" path="res://scenes/npc/Npc.tscn" id="4_qkmgm"]
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_i166f"]
+vertices = PackedVector2Array(1043.1406, 530.2422, 1042.1406, 458.4297, 1070.1016, 459.59375, 1071.8828, 620.9297, 210.9375, 615.0625, 369.10938, 514.78125, 208.04688, 82.828125, 364.10938, 80.171875)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(0, 3, 4, 5), PackedInt32Array(5, 4, 6, 7)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(198, 73, 201, 625, 1082, 631, 1080, 450, 1032, 448, 1033, 520, 379, 505, 374, 70)])
 
 [node name="level" type="Node2D"]
 script = ExtResource("1_vpf64")
@@ -27,3 +33,9 @@ tile_set = ExtResource("3_i166f")
 
 [node name="Floors" type="TileMapLayer" parent="Tiles"]
 tile_set = ExtResource("3_i166f")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_i166f")
+
+[node name="Npc" parent="." instance=ExtResource("4_qkmgm")]
+position = Vector2(281, 172)

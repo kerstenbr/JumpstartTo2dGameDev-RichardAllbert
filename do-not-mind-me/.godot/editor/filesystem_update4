@@ -1,2 +1,5 @@
-res://scenes/level/level.tscn
 res://resources/leveltiles.tres
+res://scenes/npc/Npc.tscn
+res://scenes/npc/Npc.gd
+res://scenes/level/level.tscn
+res://scenes/game_ui/game_ui.tscn

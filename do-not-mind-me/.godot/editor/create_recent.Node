@@ -1,7 +1,12 @@
+NavigationAgent2D
+CollisionShape2D
+Sprite2D
+Label
+CharacterBody2D
+NavigationRegion2D
 TileMapLayer
 TileMap
 Node2D
-Label
 MarginContainer
 ColorRect
 Control
